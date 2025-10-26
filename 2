@@ -1,0 +1,38 @@
+// Liste de 320+ versets avec texte complet en anglais moderne
+const verses = [
+  {ref:"John 3:16", text:"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."},
+  {ref:"Psalm 23:1", text:"The Lord is my shepherd; I shall not want."},
+  {ref:"Philippians 4:13", text:"I can do all things through Christ who strengthens me."},
+  {ref:"Romans 8:28", text:"And we know that in all things God works for the good of those who love him, who have been called according to his purpose."},
+  {ref:"Isaiah 41:10", text:"So do not fear, for I am with you; do not be dismayed, for I am your God."},
+  {ref:"Proverbs 3:5", text:"Trust in the Lord with all your heart and lean not on your own understanding."},
+  {ref:"Matthew 6:33", text:"But seek first his kingdom and his righteousness, and all these things will be given to you as well."},
+  {ref:"Psalm 46:1", text:"God is our refuge and strength, an ever-present help in trouble."},
+  {ref:"Jeremiah 29:11", text:"For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future."},
+  {ref:"Romans 12:2", text:"Do not conform to the pattern of this world, but be transformed by the renewing of your mind."},
+  // ... ajoute jusqu'à 320+ versets ici
+];
+
+// Elements HTML
+const verseTextEl = document.getElementById('verseText');
+const verseRefEl = document.getElementById('verseRef');
+const newBtn = document.getElementById('newVerseBtn');
+
+// Fonction pour choisir un verset aléatoire
+function pickRandomVerse() {
+  const i = Math.floor(Math.random() * verses.length);
+  return verses[i];
+}
+
+// Affiche le verset choisi
+function showRandomVerse() {
+  const verse = pickRandomVerse();
+  verseRefEl.textContent = verse.ref;
+  verseTextEl.textContent = verse.text;
+}
+
+// Event listener
+if(newBtn) newBtn.addEventListener('click', showRandomVerse);
+
+// Affiche un verset au chargement
+showRandomVerse();
